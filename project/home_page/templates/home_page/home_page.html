@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/home_page.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison Website</title>
+</head>
+<body style="background: rgb(127,127,213);background: linear-gradient(90deg, rgba(127,127,213,1) 0%, rgba(134,168,231,1) 50%, rgba(145,234,228,1) 100%);">
+    <header>
+        <div class="navbar_div">
+            <ul class="navbar">
+                <img class="navbar_logo" src="{% static '/images/logo.png'%}" alt="logo">
+                <li><a href="http://localhost:8000"><H></H>Home</a></li>
+                <li><a href="http://localhost:8000/pricealert">Price Alert</a></li>
+                <li><a href="http://localhost:8000/about">About</a></li>
+            </ul>
+        </div>
+        <h1>Price Comparison Website</h1>
+        <div class="search">
+            <form action="/search/" class="form">
+                    <input type="text" class="searchTerm" placeholder="Search..." label="Search" name="q" value="{{ request.GET.q }}">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

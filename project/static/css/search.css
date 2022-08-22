@@ -1,0 +1,115 @@
+p {
+    font-size: 16px;
+}
+
+/*GOOGLE FONT*/
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 36px;
+}
+
+/*Navigation Bar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size:  16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 0%;
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0px 20px;
+    color: #FFFFFF;
+}
+
+.navbar li a:hover {
+    transition: all 0.3s ease 0s;
+    color: #CDEFF7;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+/*Columns*/
+.row {
+  display: flex;
+}
+
+.column_l {
+  flex: 40%;
+}
+
+.column_r {
+    flex: 60%;
+  }
+
+/*Search*/
+.search {
+    position: relative;
+    display: flex;
+    position: absolute;
+}
+
+.search form input {
+    width: 150px;
+    border: 3px solid #121212;
+    border-right: 3px solid #121212;
+    padding: 0px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchButton {
+    width: 33px;
+    height: 33px;
+    border: 5px solid #121212;
+    background: #121212;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0px;
+}
+
+/*Product Cards*/
+.row {
+    position: relative;
+    top:0px;
+}
+
+.product_card {
+    display: flex;
+    background-color: #FFFFFF;
+    border: 3px solid #121212;
+    word-wrap: break-word;
+}
+
+/*ProductLink*/
+.product_card p a {
+  color: #121212;
+}
