@@ -1,0 +1,82 @@
+/*H1 Text alignment*/
+h1{
+    color:black;
+    text-align: center;
+    padding: 15px;
+}
+
+p{
+    color:black;
+    text-align: center;
+    padding: 15px;
+}
+
+.websites {
+    color:black;
+    text-align: center;
+    padding: 5px;
+}
+
+.websites li {
+    color:black;
+    text-align: center;
+    padding: 0px;
+}
+
+/*GOOGLE FONT*/
+body {
+font-family: 'Work Sans', sans-serif;
+font-size: 36px;
+}
+
+/*Navigation Bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size:  16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 0%;
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 0px 20px;
+    color: #FFFFFF;
+}
+
+.navbar li a:hover {
+    transition: all 0.3s ease 0s;
+    color: #CDEFF7;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}

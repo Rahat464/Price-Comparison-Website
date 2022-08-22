@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap">
+    <link rel="stylesheet" href="{% static '/css/price_alert.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison Website</title>
+</head>
+<body style="background: rgb(127,127,213);background: linear-gradient(90deg, rgba(127,127,213,1) 0%, rgba(134,168,231,1) 50%, rgba(145,234,228,1) 100%);">
+    <header>
+        <div class="navbar_div">
+            <ul class="navbar">
+                <img class="navbar_logo" src="{% static '/images/logo.png'%}" alt="logo">
+                <li><a href="http://localhost:8000">Home</a></li>
+                <li><a href="http://localhost:8000/pricealert">Price Alert</a></li>
+                <li><a href="http://localhost:8000/about">About</a></li>
+            </ul>
+        </div>
+        <h1>Price Alert</h1>
+        <p>Sign up for price alerts!</p>
+        <p>Please Include a valid email address and a valid product link of either:</p>
+        <ul class="websites">
+            <li>Amazon UK</li>
+            <li>Ebay UK</li>
+            <li>Newegg UK</li>
+        </ul>
+        <div style="text-align:center;font-size: 25px;padding: 5px;">
+            <form class="form">
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" class="input_box" placeholder="example@example.com" name="email" value="{{ request.GET.email }}" style="font-size: 20px">
+                <br>
+                <label for="url">ProductLink</label>
+                <br>
+                <input type="url" class="input_box" placeholder="https://www.amazon.co.uk/dp/B08NRK74FZ" name="url" value="{{ request.GET.url }}" style="font-size: 20px">
+                <br>
+                <p style="font-size: 15px">By clicking submit, you agree to our <a href="http://localhost:8000/about">TOS</a> and <a href="http://localhost:8000/about">privacy & policy</a>.</p>
+                <button type="submit" style="font-size: 20px">
+                    <p>Submit</p>
+                </button>
+            </form>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/search.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static '/images/favicon.ico'%}">
+    <meta charset="UTF-8">
+    <title>Price Comparison Website: {{ request.GET.q }}</title>
+</head>
+<body style="background: rgb(127,127,213);background: linear-gradient(90deg, rgba(127,127,213,1) 0%, rgba(134,168,231,1) 50%, rgba(145,234,228,1) 100%);">
+    <header>
+        <div class="navbar_div">
+            <ul class="navbar">
+                <img class="navbar_logo" src="{% static '/images/logo.png'%}" alt="logo">
+                <li><a href="http://localhost:8000">Home</a></li>
+                <li><a href="http://localhost:8000/pricealert">Price Alert</a></li>
+                <li><a href="http://localhost:8000/about">About</a></li>
+            </ul>
+        </div>
+        <!--Search bar-->
+        <!--Columns-->
+        <div class="row">
+            <div class="column_l">
+                <br>
+                <div class="search">
+                    <p>Search:</p>
+                    <br>
+                    <form action="/search/" class="form">
+                        <input type="text" class="searchTerm" placeholder="Search..." label="Search" name="q" value="{{ request.GET.q }}" action="/search/">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+    <!--            Sort-->
+                        <br>
+                        <br>
+                        <div style="padding:0px;background-color:#ffffff;margin:5px;border: 3px solid #121212;" >
+                            <p style="font-size:20px;">Online Retailers:</p>
+                            <div>
+                                <label for="sort" style="font-size:16px;">Amazon</label>
+                                <input type="checkbox" id="amazon" name="amazoncheck"checked="checked">
+                            </div>
+                            <div>
+                                <label for="sort" style="font-size:16px;">Newegg</label>
+                                <input type="checkbox" id="newegg" name="neweggcheck"checked="checked">
+                            </div>
+                            <div>
+                                <label for="sort" style="font-size:16px;">Ebay</label>
+                                <input type="checkbox" id="ebay" name="ebaycheck"checked="checked">
+                            </div>
+                            <p style="font-size:20px;">Online Retailers:</p>
+                            <div>
+                                <label for="sort" style="font-size:16px;">Ascending</label>
+                                <input type="checkbox" id="asc" name="asc"{% if asc %}checked="checked"{% endif %}>
+                            </div>
+                            <div>
+                                <label for="sort" style="font-size:16px;">Descending</label>
+                                <input type="checkbox" id="asc" name="desc"{% if desc %}checked="checked"{% endif %}>
+                            </div>
+                        </div>
+                    </form>
+                    </div >
+            <br>
+<!--        style="background-color:#ffffff;margin:5px;border: 3px solid #121212;"-->
+            <p>Search Results for: {{ request.GET.q }}</p>
+        </div>
+            <!--Product cards-->
+            <div class="column_r">
+                <br>
+                <!--Amazon-->
+                {% for item in products %}
+                <div class="product_card">
+                    <img src="{{ item.image_link }}" alt="Product Name" style="font-size:16px;">
+                    <p class="name" style="padding:0px 100px 0px"><a href="{{ item.product_link }}" style=";color:#121212" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></p>
+                    <p class="price" style="padding:0px 100px 0px;">{{ item.price }}</p>
+                </div>
+                <br>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+</body>
+</html>
