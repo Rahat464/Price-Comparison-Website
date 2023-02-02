@@ -17,7 +17,7 @@ setup()  # Crochet startup
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="root",  # Database password has been omitted for security reasons
+    passwd="",  # Database password has been omitted for security reasons
     database="database",
 )
 mycursor = db.cursor()  # Make DB execution code cleaner
@@ -140,7 +140,7 @@ def amazon_api(keyword):
     url = "https://amazon-price1.p.rapidapi.com/search"
     querystring = {"marketplace": "GB", "keywords": keyword}
     headers = {
-        'x-rapidapi-key': "6b08698a4fmsh8063f024dff7edcp117fe7jsn0f24382fb22f",  # API KEY removed for precautions
+        'x-rapidapi-key': "",  # API KEY removed 
         'x-rapidapi-host': "amazon-price1.p.rapidapi.com"
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
