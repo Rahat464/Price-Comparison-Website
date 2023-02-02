@@ -64,8 +64,8 @@ html = """
 # percentage
 
 # Credentials & receiver emails
-sender_email = "liutenantnexus@gmail.com"
-password = "wold.of.thans"
+sender_email = "my email" 
+password = 0 # Use env variables to store
 
 # email server
 server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -74,7 +74,7 @@ server.login(sender_email, password)
 
 # Message information
 message = EmailMessage()
-message["Subject"] = "Price Alert Website: '{}...' is now cheaper!".format("Gaming headset thing"[:30])  # Insert product name?
+message["Subject"] = "Price Alert Website: A product you're wathing is now cheaper!"  # Insert product name?
 message["From"] = sender_email
 message["To"] =  # MYSQL FETCHALL
 message.set_content("Please enable HTML! You will not be able to view this email without it.")
